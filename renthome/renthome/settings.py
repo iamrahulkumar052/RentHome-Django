@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'renthome.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'renthome', #database name
+        'USER':'root', #username
+        'PASSWORD':'root', #password
+        'HOST':'localhost', #hostname
+        'PORT':'3306', #portname
     }
 }
 
