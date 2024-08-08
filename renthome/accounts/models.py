@@ -9,6 +9,8 @@ class CustomUser(AbstractUser):
     #add role to determine users
     role = models.CharField(max_length=20,default='Renter')
 
+    phone_number = models.CharField(max_length=15, unique=True, null=True)
+
     #make email=true and using it for login purpose
     email = models.EmailField(unique=True)
     
@@ -17,4 +19,4 @@ class CustomUser(AbstractUser):
     REQUIRED_FIELDS = []
 
     def __str__(self):
-        return self.name
+        return self.username
