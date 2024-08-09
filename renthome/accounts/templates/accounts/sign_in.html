@@ -1,9 +1,60 @@
-{% extends "base.html" %}
+{% extends "base.html" %} 
 
-{% block title %} Sign In {% endblock title %}
+{% block title %} Sign In {% endblock title %} 
 
 {% block body %}
 
+<div
+  class="d-flex justify-content-center align-items-center bg-back"
+  style="height: 100vh;"
+>
+  <div class="px-3 w-100" style="max-width: 576px">
+    <div class="shadow rounded-3 bg-white border px-3 py-4">
+      <h1 class="text-center mb-4">Sign In</h1>
+      <form method="POST">
+        {% csrf_token %}
+        <!--email input-->
+        <div class="mb-3 mb-md-4">
+          <label for="email" class="form-label fw-semibold">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            autocomplete="email"
+          />
+          <p class="text-danger fw-semibold ps-1"></p>
+        </div>
 
+        <!--password input-->
+        <div class="mb-3 mb-md-4">
+          <label for="password" class="form-label fw-semibold">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+          />
+          <p class="text-danger fw-semibold ps-1"></p>
+        </div>
+
+        <div class="text-danger mb-2 fw-semibold text-center"></div>
+
+        <div class="text-center pt-3">
+          <button type="submit" class="btn btn-primary w-100">Sign In</button>
+        </div>
+      </form>
+      <div class="text-center mt-2">
+        Don't have account?
+        <a href="{% url 'user-type' %}" class="fw-semibold no-line">Sign Up</a>
+      </div>
+    </div>
+
+    <div class="text-center mt-2">
+      Created by
+      <a href="#" class="no-line text-danger fw-semibold">Rahulkumar Gupta</a>
+    </div>
+  </div>
+</div>
 
 {% endblock body %}

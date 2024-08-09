@@ -4,6 +4,36 @@
 
 {% block body %}
 
+<div
+  class="d-flex justify-content-center align-items-center bg-back"
+  style="height: 100vh;"
+>
+  <div class="px-3 w-100" style="max-width: 576px">
+    <div class="shadow rounded-3 border bg-white px-3 py-4">
+        <h1 class="text-center mb-4">Choose User</h1>
 
+        <div class="row text-center">
+            <div class="col-6">
+              <ul style="list-style-type: none;padding: 0;">
+                <li>As a Property Owner, you can list your rental property and manage bookings here</li>
+              </ul>
+                <a href="{% url 'sign-up' %}?type=Owner" class="btn btn-primary"> Owner </a>
+            </div>
+            <div class="col-6">
+              <ul style="list-style-type: none;padding: 0;">
+                <li>As a Renter, you can search for available rental homes and apply to rent them</li>
+              </ul>
+                <a href="{% url 'sign-up' %}?type=Renter" class="btn btn-success"> Renter </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="text-center mt-2">
+      Created by
+      <a href="#" class="no-line text-danger fw-semibold">Rahulkumar Gupta</a>
+    </div>
+  </div>
+</div>
 
 {% endblock body %}
